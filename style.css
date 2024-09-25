@@ -1,84 +1,79 @@
-:root{
-  --primary: linear-gradient(#ffffff,#d4d2d2);
-  --text-color:#111;
-  --text-area:rgb(233, 231, 231);
+:root {
+  --primary: linear-gradient(#ffffff, #d4d2d2);
+  --text-color: #111;
+  --text-area: rgb(233, 231, 231);
   --question-area: #f3f6f3;
-  /* --scrollbar:#3463b9; */
-  --gpt:0;
-  --code:rgb(207, 205, 205);
+  --gpt: 0;
+  --code: rgb(207, 205, 205);
 }
 
-.dark{
-  --primary: linear-gradient(220deg,#232526,#414345);
-  --text-color : #e9e7e7;
-  --text-area : #202123;
-  --question-area:rgb(62, 62, 62);
-  /* --scrollbar : #fff; */
-  --gpt:1;
-  --code:rgb(83, 81, 81);
+.dark {
+  --primary: linear-gradient(220deg, #232526, #414345);
+  --text-color: #e9e7e7;
+  --text-area: #202123;
+  --question-area: rgb(62, 62, 62);
+  --gpt: 1;
+  --code: rgb(83, 81, 81);
 }
 
 *,
 *::before,
-*::after{
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
 }
 
-html{
+html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
 
-body{
+body {
+  overflow: hidden;
+  height: 100%;
   font: 1.5rem 'poppins', sans-serif;
   color: var(--text-color);
   background-color: var(--text-area);
 }
 
-.app{
+.app {
   display: flex;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-ul li{
-  padding: .8rem 1rem;
+ul li {
+  padding: 0.8rem 1rem;
   font-size: 1.5rem;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
 }
 
-ul li:hover{
+ul li:hover {
   background-color: #fff2;
   cursor: pointer;
 }
 
-aside{
+aside {
   background: var(--primary);
-}
-
-aside{
-  /* visibility: hidden;
-  opacity: 0; */
   left: -45vh;
   z-index: 1;
   position: absolute;
-  height: 100vh;
+  height: 100%;
   width: 40vh;
   padding-top: 25px;
   transition: 0.5s;
 }
 
-aside.active{
+aside.active {
   left: 0;
   display: block;
   transition: left 1s;
 }
 
-nav{
+nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -87,7 +82,7 @@ nav{
   width: 100%;
 }
 
-.nav-top .chat-list{
+.nav-top .chat-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -96,25 +91,23 @@ nav{
   padding: 10px;
 }
 
-.chat-list::-webkit-scrollbar{
+.chat-list::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
-
-
-nav button{
+nav button {
   width: 100%;
   height: 40px;
   background-color: transparent;
@@ -127,7 +120,7 @@ nav button{
   color: var(--text-color);
 }
 
-nav .chats li{
+nav .chats li {
   display: flex;
   justify-content: space-between;
   border: 1px solid rgba(165, 164, 164, 0.149);
@@ -135,12 +128,7 @@ nav .chats li{
   height: 45px;
 }
 
-.chats .edit{
-  display: none;
-  gap: 10px;
-}
-
-.app .toggle{
+.app .toggle {
   position: fixed;
   top: 5px;
   left: 5px;
@@ -151,7 +139,7 @@ nav .chats li{
   color: var(--text-color);
 }
 
-main{
+main {
   height: 100vh;
   width: 60vw;
   margin: 0 auto;
@@ -162,26 +150,18 @@ main{
   transition: 0.1s;
 }
 
-main.active{
+main.active {
   margin-left: 40vh;
   width: 100%;
   padding: 20px 10vw;
   transition: 0.2s;
 }
 
-.answer div{
+.answer div, code {
   white-space: break-spaces;
 }
 
-code{
-  white-space: break-spaces;
-}
-
-/* main>div{
-  margin: 0 auto;
-} */
-
-main .request{
+main .request {
   border: 1px solid var(--text-color);
   border-radius: 40px;
   display: flex;
@@ -189,7 +169,7 @@ main .request{
   padding: 0 10px;
 }
 
-main .request div{
+main .request div {
   display: flex;
   gap: 5px;
   align-items: center;
@@ -197,38 +177,38 @@ main .request div{
   height: 40px;
 }
 
-main .request input{
+main .request input {
   height: 100%;
 }
 
-main .request button{
+main .request button {
   display: flex;
   border: none;
   background: transparent;
   align-items: center;
 }
 
-.main-container-1{
+.main-container-1 {
   width: 100%;
   height: 80vh;
   overflow-y: scroll;
 }
 
-.main-container-1::-webkit-scrollbar{
+.main-container-1::-webkit-scrollbar {
   display: none;
 }
 
-main .heading{
+main .heading {
   text-align: center;
 }
 
-main .question{
+main .question {
   margin: 20px 0;
   display: flex;
   justify-content: end;
 }
 
-main .question div{
+main .question div {
   background-color: var(--question-area);
   max-width: 36vw;
   width: fit-content;
@@ -236,82 +216,109 @@ main .question div{
   padding: 8px 20px;
 }
 
-main .answer{
+main .answer {
   margin: 20px 0;
   width: fit-content;
-  padding:8px;
+  padding: 8px;
   border-radius: 50px;
 }
 
-main .answer .answer-container{
-  display: flex;  
+main .answer .answer-container {
+  display: flex;
 }
 
-.answer-container img{
+.answer-container img {
   height: 20px;
   margin-right: 10px;
 }
 
-.request input{
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  outline: none;
-}
-
-input,svg{
+.request input,
+svg {
   color: var(--text-color);
 }
 
-img {  
+img {
   filter: invert(var(--gpt));
-} 
+}
 
-input{
+input {
   background-color: transparent;
   border: none;
 }
 
-.code-container{
+.code-container {
   border: 2px solid var(--question-area);
   padding: 10px;
   background-color: var(--code);
   border-radius: 10px;
 }
 
-@media screen and (max-width:1000px) {
-  main .question div{
-    max-width: 35vw;
-  }
-  main{
+.request input {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  outline: none;
+}
+
+input,
+svg {
+  color: var(--text-color);
+}
+
+input {
+  background-color: transparent;
+  border: none;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+  main {
     width: 80vw;
+    padding-top: 10px;
+    height: 100vh;
+    padding-bottom: 20px;
+  }
+  
+  main.active {
+    margin-left: 32vh;
+  }
+
+  aside {
+    width: 32vh;
   }
 }
 
-@media screen and (max-width:700px) {
-  aside{
-    width: 32vh;
-  }
-  .main-container-1{
-    height: 75vh;
-  }
-  ul li{
+@media screen and (max-width: 600px) {
+  ul li {
     font-size: 1.3rem;
   }
-  nav button{
+
+  nav button {
     font-size: 1.3rem;
   }
-  main.active{
+
+  aside {
+    width: 25vh;
+  }
+
+  main {
+    height: 100vh;
+    padding-bottom: 80px;
+  }
+
+  main.active {
     margin: 0;
-    /* pointer-events: none;  */
-    /* user-select: none; */
+    padding-bottom: 80px;
     background-color: #2221214a;
-    color:blur;
   }
-  main.active input{
-    pointer-events: none; 
+
+  .answer-container img {
+    height: 18px;
   }
-  .chats input{
+
+  .chats input {
     width: 130px;
   }
 }
+
