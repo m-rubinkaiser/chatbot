@@ -292,6 +292,9 @@ input{
   aside{
     width: 32vh;
   }
+  .main-container-1{
+    height: 75vh;
+  }
   ul li{
     font-size: 1.3rem;
   }
